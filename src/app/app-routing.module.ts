@@ -10,12 +10,21 @@ import { RegistroComponent } from './components/registro/registro.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
+<<<<<<< Updated upstream
   { path: 'graficas', component: GraficasComponent },
   { path: 'usuario', component: InicioUsuarioComponent, children: [
     { path: 'productos', component: ProductosComponent },
     { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent },
     { path: 'graficas', component: GraficasComponent },
   ]}
+=======
+  { path: 'usuario', component:InicioUsuarioComponent, children: [
+  { path: 'productos', component: ProductosComponent },
+  { path: 'detalleProducto/:idProducto', component: DetalleProductoComponent },
+  { path: 'graficas', component: GraficasComponent }
+  ]},
+
+>>>>>>> Stashed changes
 ];
 
 @NgModule({

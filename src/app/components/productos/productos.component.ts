@@ -15,7 +15,10 @@ export class ProductosComponent implements OnInit {
   public productosModelGet: Productos;
   public productosModelPost: Productos;
   public productosModelGetId: Productos;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
   public token;
   constructor(
     private _productosService: ProductosService,
@@ -29,13 +32,41 @@ export class ProductosComponent implements OnInit {
         idProveedor: ''
       }],
       0,
+<<<<<<< Updated upstream
       0);
     this.productosModelGetId = new Productos('', '',[],[{ idProveedor: '' }], 0, 0);
     this.token = this._usuarioService.getToken();
+=======
+      0)
+    this.productosModelGetId= new Productos('','',[],[{idProveedor:''}],0,0);
+    this.token = this._usuarioService.getToken()
+>>>>>>> Stashed changes
   }
 
   ngOnInit(): void {
     this.getProductos();
+  }
+  getProductosId(idProducto){
+    this._productosService.obtenerProductoId(idProducto).subscribe(
+      (response) => {
+        console.log(response);
+        this.productosModelGetId
+      },
+      (err) => {
+
+      }
+    )
+  }
+
+  putProducto(){
+    this._productosService.editarProducto(this.productosModelGetId).subscribe((response) => {
+      console.log(response);
+      this.getProductos();
+    },
+    (error) => {
+
+    }
+    )
   }
 
   getProductos(){

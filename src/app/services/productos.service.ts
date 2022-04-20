@@ -17,6 +17,14 @@ export class ProductosService {
 
     return this._http.get(this.url + '/productos', { headers: headersToken });
   }
+  obtenerProductoId(idProdcto): Observable<any> {
+    return this._http.get(this.url + '/producto/' + idProdcto, {headers: this.headersVariable})
+  }
+
+  editarProducto(modeloProductos: Productos): Observable<any> {
+    let parametro= JSON.stringify(modeloProductos)
+    return this._http.put(this.url + '/editarProducto/' + modeloProductos._id, parametro, {headers: this.headersVariable})
+  }
 
   obtenerProductoId( idProducto ): Observable<any> {
 

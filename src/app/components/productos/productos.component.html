@@ -17,11 +17,17 @@
         <div class="card-footer bg-transparent border-success">
           <div class="btn-group" role="group" aria-label="Basic mixed styles example">
             <button type="button" class="btn btn-danger" (click)="deleteProducto(prod._id)">Eliminar</button>
+<<<<<<< Updated upstream
             <button type="button" class="btn btn-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
               aria-controls="offcanvasExample" (click)="getProductosId(prod._id)">
               Editar
             </button>
             <button type="button" class="btn btn-success" [routerLink]="['/usuario/detalleProducto', prod._id]">Ver</button>
+=======
+            <button type="button" class="btn btn-warning" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" (click)="getProductosId(prod._id)">Editar</button>
+            <button type="button" class="btn btn-success" [routerLink]="['usuario/detalleProducto', prod._id]">Ver</button>
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
@@ -61,8 +67,39 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<<<<<<< Updated upstream
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="postProductos()">Agregar</button>
+=======
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="postProductos()" >Agregar</button>
+
+>>>>>>> Stashed changes
       </div>
+    </div>
+  </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form>
+        <div class="mb-3">
+          <label for="inputNombre" class="form-label">nombre Producto</label>
+          <input type="text" class="form-control" id="inputNombre" name="nombre" #nombre="ngModel"
+          [(ngModel)]="productosModelGetId.nombre">
+        </div>
+        <div class="mb-3">
+          <label for="inputCantidad" class="form-label">Cantidad Producto</label>
+          <input type="text" class="form-control" id="inputCantidad" name="cantidad" #cantidad="ngModel"
+          [(ngModel)]="productosModelGetId.cantidad">
+        </div>
+        <div class="mb-3">
+          <label for="inputNombre" class="form-label">Precio Producto</label>
+          <input type="text" class="form-control" id="inputNombre" name="precio" #precio="ngModel"
+          [(ngModel)]="productosModelGetId.precio">
+        </div>
+        <button >Editar producto</button>
+      </form>
     </div>
   </div>
 </div>
